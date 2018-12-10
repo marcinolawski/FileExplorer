@@ -102,10 +102,7 @@ final class LocalStorageFileService: FileService {
                     completionBlock(.error(FileServiceError.removalFailure(removedItems: deletedItems, itemsNotRemovedDueToFailure: itemsNotRemovedDueToFailure)),
                                     deletedItems,
                                     itemsNotRemovedDueToFailure)
-                } else {
-                    completionBlock(.success(), deletedItems, itemsNotRemovedDueToFailure)
                 }
-
             }
         }
     }

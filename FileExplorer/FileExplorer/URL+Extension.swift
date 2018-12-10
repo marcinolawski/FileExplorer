@@ -42,7 +42,4 @@ extension URL {
         return lastPathComponent.trimmingCharacters(in: CharacterSet.whitespaces)
     }
     
-    func makeStandarizedFirstCharacterOfLastPathComponent() -> Character? {
-        return makeStandarizedLastPathComponent().localizedUppercase.characters.first
-    }
 }
