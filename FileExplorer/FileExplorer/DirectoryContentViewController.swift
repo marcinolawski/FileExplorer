@@ -105,9 +105,9 @@ final class DirectoryContentViewController: UICollectionViewController {
         }
 
         syncToolbarWithViewModel()
-        let editBarButtonItem = viewModel.isEditActionHidden ? nil : UIBarButtonItem(title: viewModel.editActionTitle, style: .plain, target: self, action: #selector(handleEditButtonTap))
-        editBarButtonItem?.isEnabled = viewModel.isEditActionEnabled
-        activeRightBarButtonItem = editBarButtonItem
+        //let editBarButtonItem = viewModel.isEditActionHidden ? nil : UIBarButtonItem(title: viewModel.editActionTitle, style: .plain, target: self, action: #selector(handleEditButtonTap))
+        //editBarButtonItem?.isEnabled = viewModel.isEditActionEnabled
+        //activeRightBarButtonItem = editBarButtonItem
         activeNavigationItemTitle = viewModel.title
         view.isUserInteractionEnabled = viewModel.isUserInteractionEnabled
         setEditing(viewModel.isEditing, animated: true)

@@ -58,7 +58,7 @@ final class ActionsViewController: UIViewController {
         toolbar.sizeToFit()
         toolbar.pinToBottom(of: view)
         toolbar.items = [
-            UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(handleShareButtonTap)),
+            //UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(handleShareButtonTap)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
             UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(handleTrashButtonTap))
         ]
