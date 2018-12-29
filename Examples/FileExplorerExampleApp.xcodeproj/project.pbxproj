@@ -70,6 +70,7 @@
 				764AF47AB6A280003037762D /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		06A208831D85B9C200E51C13 /* Products */ = {
 			isa = PBXGroup;

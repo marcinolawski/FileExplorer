@@ -59,4 +59,8 @@ extension ViewController: FileExplorerViewControllerDelegate {
     public func fileExplorerViewControllerDidFinish(_ controller: FileExplorerViewController) {
         
     }
+    
+    func fileExplorerViewController(_ controller: FileExplorerViewController, didSelectURL url: URL) -> Bool{
+        return false
+    }
 }

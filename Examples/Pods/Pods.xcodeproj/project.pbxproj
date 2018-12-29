@@ -212,6 +212,7 @@
 				315C2DA2A1195B1460F7E2CC7ACD7A9F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		8D16BCFFCDB08ADE02514BB85341394C /* FileExplorer */ = {
 			isa = PBXGroup;

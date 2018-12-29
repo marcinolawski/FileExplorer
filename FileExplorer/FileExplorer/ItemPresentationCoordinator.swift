@@ -30,6 +30,7 @@ import AVFoundation
 protocol ItemPresentationCoordinatorDelegate: class {
     func itemPresentationCoordinatorDidFinish(_ coordinator: ItemPresentationCoordinator)
     func itemPresentationCoordinator(_ coordinator: ItemPresentationCoordinator, didChooseItems items: [Item<Any>])
+    func itemPresentationCoordinator(_ coordinator: ItemPresentationCoordinator, didSelectItem item: Item<Any>) -> Bool
 }
 
 final class ItemPresentationCoordinator {
@@ -70,7 +71,10 @@ final class ItemPresentationCoordinator {
 
 extension ItemPresentationCoordinator: DirectoryItemPresentationCoordinatorDelegate {
     func directoryItemPresentationCoordinator(_ coordinator: DirectoryItemPresentationCoordinator, didSelectItem item: Item<Any>) {
-        start(item: item, fileSpecifications: fileSpecifications, configuration: configuration, animated: true)
+        let stopProcessing = delegate?.itemPresentationCoordinator(self, didSelectItem: item) ?? false
+        if !stopProcessing{
+            start(item: item, fileSpecifications: fileSpecifications, configuration: configuration, animated: true)
+        }
     }
 
     func directoryItemPresentationCoordinator(_ coordinator: DirectoryItemPresentationCoordinator, didSelectItemDetails item: Item<Any>) {

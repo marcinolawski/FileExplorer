@@ -40,6 +40,8 @@ public protocol FileExplorerViewControllerDelegate: class {
     ///   - controller: The controller object managing the file explorer interface.
     ///   - urls: URLs choosen by users.
     func fileExplorerViewController(_ controller: FileExplorerViewController, didChooseURLs urls: [URL])
+    //TODO: Add comments
+    func fileExplorerViewController(_ controller: FileExplorerViewController, didSelectURL url: URL) -> Bool
 }
 
 /// The FileExplorerViewController class manages customizable for displaying, removing and choosing files and directories stored in local storage of the device in your app. A file explorer view controller manages user interactions and delivers the results of those interactions to a delegate object.
@@ -144,5 +146,14 @@ extension FileExplorerViewController: ItemPresentationCoordinatorDelegate {
         dismiss(animated: true, completion: nil)
         let urls = items.map { $0.url }
         delegate?.fileExplorerViewController(self, didChooseURLs: urls)
+    }
+    
+    func itemPresentationCoordinator(_ coordinator: ItemPresentationCoordinator, didSelectItem item: Item<Any>) -> Bool{
+        let url = item.url
+        let dismissCtrl = delegate?.fileExplorerViewController(self, didSelectURL: url) ?? false
+        if dismissCtrl{
+            dismiss(animated: true, completion: nil)
+        }
+        return dismissCtrl
     }
 }
